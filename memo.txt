@@ -1,0 +1,34 @@
+querySelector：HTMLから要素を探す
+querySelectorAll：すべての要素（ボタン）を取得（探す）
+forEach： ボタンを１つずつ処理する
+addEventListener：クリックされた時の処理
+textContent：画面に表示する文字
+const： 変数を作る
+connst display：displayという名前の箱を作る
+first Number：最初の数字を保存
+operator：計算記号を保存
+forEach：取得したボタンを１つずつ取り出して同じ処理を行う
+addEventListener：イベントが起きた時の処理を登録する
+textContent：HTML要素の中に書かれている文字を取得するもの
+let：後から変更できる変数を宣言する
+if : もし○○なら
+else if : ifの後に使う。　そうでなければ、もし××なら　
+　　　　　 前の条件が違った場合の次の条件をチェック
+else : それ以外なら。　上の条件にどれも当てはまらなかったら実行
+｜｜　：　または。　○○または××なら実行
+length : 文字数を数えるもの
+NaN　：　Not a Number 数値ではない
+slice(0, -1) : slice(どこから, どこまで) 0 →　最初から　1　→　最後の1文字手前まで
+=== : 厳密に等しいか
+<br> : break 改行
+平方根　√　：　同じ数字を2回かけたらその数字になるもの
+Dev Tools : Webページで、HTML・CSS・JavaScriptがどう動いてるか確認したり
+　　　　　　 試したりする道具
+splice : つなぎ合わせる
+変数　：　1つの値を入れておく箱　let name ="のわーる";　let age ="30";
+配列　：　複数の値を順番に入れておく箱　let numbers = [5,3,2,2]
+Diovide : 割る
+multiply : かける
+index : 場所を表す番号
+indexOf : 指定したものが何番目の場所にあるか探す命令
+!== :　等しくはない　　ifと組み合わせる　もしその演算子があれば処理をするみたいな意味

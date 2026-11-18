@@ -1,0 +1,481 @@
+/* ページ全体 */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 20px;
+  background-color: #dff6ff;
+  background-image: radial-gradient(#ffffff 2px, transparent 2px);
+  background-size: 24px 24px;
+  font-family: sans-serif;
+  text-align: center;
+  color: #66504d;
+}
+
+/* タイトル */
+h1 {
+  margin: 10px 0 25px;
+  color: #ff80ab;
+  font-size: 28px;
+  text-shadow: 2px 2px #ffffff;
+}
+
+/* 電卓本体 */
+.calculator {
+  width: 100%;
+  max-width: 340px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fffaf0;
+  border: 3px solid #f5d9bd;
+  border-radius: 35px;
+  box-shadow: 0 8px 0 #e8c9ae;
+}
+
+/* 数字表示部分 */
+
+/* ディスプレイ全体 */
+.display {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  min-height: 85px;
+  padding: 10px 15px;
+  box-sizing: border-box;
+  overflow: hidden;
+
+  background-color: #eaf6e2;
+  border-radius: 15px;
+  margin-bottom: 20px;
+}
+
+/* 計算式表示 */
+.expression {
+  width: 100%;
+  min-height: 20px;
+  font-size: 16px;
+  color: #84977b;
+  text-align: right;
+  overflow-wrap: anywhere;
+}
+
+/* 数値・計算結果表示 */
+.result {
+  width: 100%;
+  font-size: 32px;
+  text-align: right;
+  overflow-wrap: anywhere;
+}
+
+/* ボタンを4列に並べる */
+.button-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 9px;
+}
+
+/* ボタン共通 */
+button {
+  width: 100%;
+  min-width: 0;
+  height: 58px;
+  margin: 0;
+  border: 2px solid #ffffff;
+  border-radius: 18px;
+  background-color: #b9e8ff;
+  color: #35617a;
+  font-size: 20px;
+  font-weight: bold;
+  box-shadow: 0 4px 0 #91cde8;
+  cursor: pointer;
+  transition: transform 0.1s, box-shadow 0.1s;
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  transition: transform 0.08s ease, background-color 0.08s ease;
+}
+
+button:active {
+  transform: scale(0.94);
+  filter: brightness(1.15);
+  }
+
+  button.keyboard-press {
+  animation: keyboardPress 0.12s ease;
+  filter: brightness(1.15);
+}
+
+@keyframes keyboardPress {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.8);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+
+/* 数字ボタン */
+button.number {
+  background-color: #b9e8ff;
+  color: #35617a;
+  box-shadow: 0 4px 0 #91cde8;
+}
+
+/* 演算子ボタン */
+button.operator {
+  background-color: #ffe28a;
+  color: #92612d;
+  box-shadow: 0 4px 0 #efc65b;
+}
+
+/* AC・Cボタン */
+button.clear {
+  background-color: #ffb4c8;
+  color: #87475d;
+  box-shadow: 0 4px 0 #f18da9;
+}
+
+/* ＝ボタン */
+button.equals {
+  background-color: #ff8fb1;
+  color: #ffffff;
+  box-shadow: 0 4px 0 #e96b91;
+}
+
+/* その他の機能ボタン */
+button.function {
+  background-color: #d7c2ff;
+  color: #654b91;
+  box-shadow: 0 4px 0 #b49be8;
+}
+
+/* ボタンを押したとき */
+button:active {
+  transform: translateY(3px);
+  box-shadow: none;
+}
+
+/* スマホ対応 */
+@media (max-width: 400px) {
+  body {
+    padding: 12px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  .calculator {
+    padding: 15px;
+    border-radius: 28px;
+  }
+
+  .button-grid {
+    gap: 7px;
+  }
+
+  button {
+    height: 54px;
+    border-radius: 15px;
+    font-size: 18px;
+  }
+
+  .display {
+    min-height: 75px;
+    font-size: 28px;
+  }
+}
+/* ゆるかわ猫のデザイン */
+.cat {
+  position: relative;
+  margin: 0 auto;
+  padding-top: 0;
+}
+
+/* 猫の耳 */
+.cat-ears {
+  display: flex;
+  justify-content: space-between;
+  width: 170px;
+  height: 38px;
+  margin: 0 auto -8px;
+  padding: 0 12px;
+}
+
+.cat-ear {
+  position: relative;
+  display: block;
+  width: 45px;
+  height: 48px;
+  background: #fff0e2;
+  border: 3px solid #f5d9bd;
+  border-radius: 65% 35% 0 0;
+  clip-path: polygon(0 100%, 15% 35%, 50% 0, 85% 35%, 100% 100%);
+  transform: rotate(-8deg);
+}
+
+.cat-ear::after {
+  content: "";
+  position: absolute;
+  top: 9px;
+  left: 10px;
+  width: 20px;
+  height: 25px;
+  background: #ff9fbd;
+  clip-path: polygon(0 100%, 20% 30%, 50% 0, 80% 30%, 100% 100%);
+}
+
+.right-ear {
+  transform: scaleX(-1) rotate(-15deg);
+}
+
+/* 猫の顔 */
+.cat-face {
+  position: relative;
+  width: 190px;
+  height: 150px;
+  margin: 0 auto;
+  background: #fff0e2;
+  border: 3px solid #f5d9bd;
+  border-radius: 48% 48% 45% 45% / 45% 45% 55% 55%;
+  box-shadow: 0 4px 0 #f5d9bd;
+}
+
+/* 目 */
+.cat-eye {
+  position: absolute;
+  top: 43px;
+  display: block;
+  width: 30px;
+  height: 34px;
+  background: #49352f;
+  border-radius: 50%;
+}
+
+.left-eye {
+  left: 39px;
+}
+
+.right-eye {
+  right: 39px;
+}
+
+/* 目のハイライト */
+.eye-highlight {
+  position: absolute;
+  top: 4px;
+  left: 5px;
+  width: 8px;
+  height: 8px;
+  background: #ffffff;
+  border-radius: 50%;
+}
+
+/* ほっぺ */
+.cat-cheek {
+  position: absolute;
+  top: 85px;
+  width: 25px;
+  height: 13px;
+  background: #ffb6c9;
+  border-radius: 50%;
+  opacity: 0.8;
+}
+
+.left-cheek {
+  left: 20px;
+}
+
+.right-cheek {
+  right: 20px;
+}
+
+/* 鼻 */
+.cat-nose {
+  position: absolute;
+  top: 74px;
+  left: 50%;
+  width: 12px;
+  height: 9px;
+  background: #ff80ab;
+  border-radius: 45% 45% 55% 55%;
+  transform: translateX(-50%);
+}
+
+/* 口 */
+.cat-mouth {
+  position: absolute;
+  top: 82px;
+  left: 50%;
+  font-size: 24px;
+  color: #805b4c;
+  transform: translateX(-50%);
+}
+
+/* ひげ */
+.cat-whiskers {
+  position: absolute;
+  top: 78px;
+  width: 32px;
+  height: 20px;
+}
+
+.cat-whiskers::before,
+.cat-whiskers::after {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 2px;
+  background: #b88f7c;
+  border-radius: 2px;
+}
+
+.left-whiskers::before {
+  top: 3px;
+  transform: rotate(12deg);
+}
+
+.left-whiskers::after {
+  top: 12px;
+  transform: rotate(-12deg);
+}
+
+.right-whiskers::before {
+  top: 3px;
+  transform: rotate(12deg);
+}
+
+.right-whiskers::after {
+  top: 12px;
+  transform: rotate(-12deg);
+}
+
+.left-whiskers {
+  left: 5px;
+}
+
+.right-whiskers {
+  right: 5px;
+  transform: scaleX(-1);
+}
+
+/* 前足 */
+.cat-paws {
+  position: absolute;
+  top: 130px;
+  font-size: 22px;
+}
+
+.left-paw {
+  left: 40px;
+  top: 125px;
+}
+
+.right-paw {
+  right: 40px;
+  top: 125px;
+  transform: scaleX(-1);
+}
+
+/* 計算履歴 */
+.history {
+  max-height: 150px;
+  overflow-y: auto;
+  margin-top: 10px;
+  padding: 10px;
+  background: #fff0f5;
+  border: 1px solid #f5c6d6;
+  border-radius: 12px;
+  scrollbar-width: thin;
+  scrollbar-color: #e8a5bd #fff0f5;
+}
+
+.history p {
+  color: #c76b91;
+  font-weight: bold;
+  text-align: left;
+  margin-top: 0;
+  font-size: 14px;
+}
+
+.history ul {
+  padding-left: 20px;
+}
+
+.history li {
+  margin-bottom: 5px;
+  color: #66515b;
+}
+/* スクロールバーのデザイン */
+.history::-webkit-scrollbar {
+  width: 7px;
+}
+
+.history::-webkit-scrollbar-track {
+  background: #fff0f5;
+  border-radius: 10px;
+}
+
+.history::-webkit-scrollbar-thumb {
+  background: #e8a5bd;
+  border-radius: 10px;
+}
+
+.history::-webkit-scrollbar-thumb:hover {
+  background: #d987a7;
+}
+
+/* 計算履歴にカーソルを合わせたとき */
+.history li {
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+}
+
+.history li:hover {
+  background-color: #ffe0eb;
+  color: #c76b91;
+}
+
+/* スマホ対応 */
+@media (max-width: 600px) {
+
+  .button-grid button {
+    min-height: 60px;
+    font-size: 20px;
+  }
+
+  .calculator {
+    padding: 0px 12px 12px;
+  }
+
+h1 {
+  margin-top: 0px;
+  margin-bottom: 5px;
+}
+
+.cat {
+  transform: scale(0.85);
+  transform-origin: center;
+  margin-bottom: -5px;
+}
+
+.history {
+  max-height: 90px;
+  margin-top: 5px;
+  padding: 6px;
+}
+
+  }
+
+  

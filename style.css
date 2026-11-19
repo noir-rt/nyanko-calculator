@@ -451,7 +451,7 @@ button:active {
 @media (max-width: 600px) {
 
   .button-grid button {
-    min-height: 56px;
+    min-height: 50px;
     font-size: 20px;
   }
 
